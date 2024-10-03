@@ -1,0 +1,16 @@
+<Modal @isVisible={{true}}>
+  <div class="transmission-update-modal">
+    <div class="transmission-update-modal__header">
+      <h1>Transmission Profile Update Package</h1>
+      <LinkTo @route="transmission">x</LinkTo>
+    </div>
+    
+    <div class="transmission-update-modal__body">
+      {{#if this.model.isLoading}}
+        Loading...
+      {{else}}
+        {{outlet}}
+      {{/if}}
+    </div>
+  </div>
+</Modal>

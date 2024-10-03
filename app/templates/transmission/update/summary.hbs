@@ -1,0 +1,25 @@
+<ContentWithButtons>
+  <:body>
+    <h3>Summary</h3>
+    <h4>Software</h4>
+    <p>Current value: {{this.model.software.current}}</p>
+    <p>New value: {{this.model.software.new}}</p>
+
+    <h4>Calibration</h4>
+    <p>Current value: {{this.model.calibration.current}}</p>
+    <p>New value: {{this.model.calibration.new}}</p>
+  </:body>
+
+  <:buttons>
+    <button
+        class="btn btn-primary"
+        {{on 'click' this.handleBackButtonClicked}}>
+      Back
+    </button>
+    <button
+        class="btn btn-primary"
+        {{on 'click' this.handleSubmitButtonClicked}}>
+      Submit
+    </button>
+  </:buttons>
+</ContentWithButtons>

@@ -1,0 +1,21 @@
+<ContentWithButtons>
+  <:body>
+    <h3>Calibration</h3>
+    <p>Current value: {{this.model.calibration.current}}</p>
+    New value: <input value={{this.model.calibration.new}} {{on 'input' this.handleNewValueInputChanged}} />
+  </:body>
+
+  <:buttons>
+    <button
+        class="btn btn-primary"
+        {{on 'click' this.handleBackButtonClicked}}>
+      Back
+    </button>
+    <button
+        class="btn btn-primary"
+        disabled={{this.isViewSummaryButtonDisabled}}
+        {{on 'click' this.handleViewSummaryButtonClicked}}>
+      View Summary
+    </button>
+  </:buttons>
+</ContentWithButtons>

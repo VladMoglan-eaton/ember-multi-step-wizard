@@ -1,0 +1,22 @@
+<ContentWithButtons>
+  <:body>
+    <h3>Software</h3>
+
+    <p>Current value: {{this.model.software.current}}</p>
+    New value: <input value="{{this.model.software.new}}" {{on 'input' this.handleNewValueInputChanged}} />
+  </:body>
+
+  <:buttons>
+    <button
+        class="btn btn-primary"
+        {{on 'click' this.handleBackButtonClicked}}>
+      Back
+    </button>
+    <button
+        class="btn btn-primary"
+        disabled={{this.isNextButtonDisabled}}
+        {{on 'click' this.handleNextButtonClicked}}>
+      Next
+    </button>
+  </:buttons>
+</ContentWithButtons>

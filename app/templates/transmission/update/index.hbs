@@ -1,0 +1,18 @@
+<ContentWithButtons>
+  <:body>
+    <p>Do you agree with our terms and conditions?</p>
+    <Input 
+      @type="checkbox"
+      @checked={{this.model.areTermsAgreed}} 
+      {{on 'change' this.handleTermsAcceptedChanged}}/> Yes I agree
+  </:body>
+
+  <:buttons>
+    <button
+        class="btn btn-primary" 
+        disabled={{this.isNextButtonDisabled}}
+        {{on 'click' this.handleNextButtonClicked}}>
+      Next
+    </button>
+  </:buttons>
+</ContentWithButtons>
