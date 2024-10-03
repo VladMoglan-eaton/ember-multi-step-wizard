@@ -9,19 +9,8 @@ export default class TransmissionUpdateSummaryRoute extends TransmissionUpdateAf
     super.redirect();
     const model = this.modelFor('transmission.update');
 
-    if (!model.hasAnyChanges) {
+    if (!model.configEditor.hasAnyChanges) {
       this.router.transitionTo('transmission.update.software');
     }
-  }
-
-  model() {
-    const model = this.modelFor('transmission.update');
-    model.isLoading = true;
-    return new Promise(function(resolve) {
-      setTimeout(resolve, 5000);
-    }).then(function() {
-      model.isLoading = false;
-      return model;
-    })
   }
 }

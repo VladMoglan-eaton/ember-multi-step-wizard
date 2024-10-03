@@ -5,10 +5,13 @@ import { inject as service } from '@ember/service';
 export default class TransmissionUpdateCalibrationsController extends Controller {
   @service router;
 
-  get isViewSummaryButtonDisabled() { return !this.model.hasAnyChanges; };
+  get isViewSummaryButtonDisabled() { return !this.model.configEditor.hasAnyChanges; };
 
   @action handleNewValueInputChanged(event) {
-    this.model.calibration = { current: this.model.calibration.current, new: event.target.value };
+    this.model.configEditor.calibration = { 
+      ...this.model.configEditor.calibration,
+      new: event.target.value 
+    };
   }
 
   @action handleBackButtonClicked() {

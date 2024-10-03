@@ -9,7 +9,7 @@ export default class TransmissionUpdateIndexController extends Controller {
 
   @action handleTermsAcceptedChanged(event) {
     this.model.areTermsAccepted = event.target.checked;
-    this.model.reset();
+    this.model.configEditor = null;
   }
 
   @action handleNextButtonClicked() {

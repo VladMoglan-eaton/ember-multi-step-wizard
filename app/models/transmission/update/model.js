@@ -1,19 +1,9 @@
 import { tracked } from '@glimmer/tracking';
 
-export default class TransmissionUpdateModel {
-  @tracked isLoading = false;
-
-  @tracked areTermsAccepted = false;
-
-  @tracked software = {
-    current: tracked(),
-    new: tracked()
-  };
+export class TransmissionUpdateConfigEditorModel {
+  @tracked software = { current: '', new: '' };
   
-  @tracked calibration = {
-    current: tracked(),
-    new: tracked()
-  };
+  @tracked calibration = { current: '', new: '' };
 
   get hasSoftwareChanges() {
     return this.software.new !== this.software.current;
@@ -39,4 +29,10 @@ export default class TransmissionUpdateModel {
     this.resetSoftware();
     this.resetCalibration();
   }
+}
+
+export default class TransmissionUpdateModel {
+  @tracked isLoading = false;
+  @tracked areTermsAccepted = false;
+  @tracked configEditor = null;
 }
